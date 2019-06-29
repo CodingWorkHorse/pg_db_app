@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +11,72 @@
   </head>
 
   <body>
+
+      <div class="current_header">
+<div class="topnav">
+  <% if current_user %>
+
+  <a href="<%= user_path(current_user) %>"><button class ="logout" type="button"><%= current_user.email[0].upcase %>
+ </button></a>
+
+
+
+  <% else %>
+  <a href="<%= login_path %>"><button class ="login" type="button">Log In</button></a>
+<% end %>
+  <a href=""><p>Collection</p></a>
+  <% if current_user %>
+  <a href=""><p>Dashboard</p></a>
+  <a href=""><p>Listings</p></a>
+  <% end %>
+  <a href="<%= root_path %>"><p> Home</p></a>
+   <a href="<%= root_path %>"><p> <strong>More Cylinders</strong></p></a>
+</div>
+
+</div>
+
+<div class="main_block">
     <%= yield %>
+  </div>
+
+
+  <div class="footer-main-div">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="footer-social-icons">
+  <ul>
+    <li><a href="https://www.facebook.com/" target="blank"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="https://twitter.com/?lang=en" target="blank"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="https://www.instagram.com/" target="blank"><i class="fa fa-instagram"></i></a></li>
+    <li><a href="https://www.youtube.com/" target="blank"><i class="fa fa-youtube"></i></a></li>
+  </ul>
+</div>  
+ 
+<div class="footer-menu-one">
+  <ul>
+    <li><a href="<%= root_path %>">Home</a></li>
+    <li><a href="">Collection</a></li>
+           <li><a href="">Listings</a></li>
+           <li><a href="">Dashboard</a></li>
+  </ul>
+</div>
+
+
+
+<!-- 
+<div class="footer-menu-two">
+  <ul>
+    <li><a href="#">Blog</a></li>
+           <li><a href="#">News</a></li>
+           <li><a href="#">Gallery</a></li>
+           <li><a href="#">Media</a></li>
+           
+  </ul>
+</div> -->
+
+
+
+ 
+</div>
   </body>
 </html>
